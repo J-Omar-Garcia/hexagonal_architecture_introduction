@@ -1,0 +1,10 @@
+com\accenture\training\hexagonaltutorial\hexagonal\application\ProductInteractorCommandImpl.class
+com\accenture\training\hexagonaltutorial\hexagonal\infrastructure\database\h2\repository\ProductJpaRepositoryCommand.class
+com\accenture\training\hexagonaltutorial\hexagonal\infrastructure\database\h2\repository\ProductJpaRepositoryQuery.class
+com\accenture\training\hexagonaltutorial\hexagonal\application\IProductInteractorCommand.class
+com\accenture\training\hexagonaltutorial\hexagonal\application\IProductInteractorQuery.class
+com\accenture\training\hexagonaltutorial\hexagonal\domain\repository\ProductRepositoryPortCommand.class
+com\accenture\training\hexagonaltutorial\hexagonal\infrastructure\database\h2\adapter\ProductRepositoryAdapterQuery.class
+com\accenture\training\hexagonaltutorial\hexagonal\infrastructure\database\h2\adapter\ProductRepositoryAdapterCommand.class
+com\accenture\training\hexagonaltutorial\hexagonal\application\ProductInteractorQueryImpl.class
+com\accenture\training\hexagonaltutorial\hexagonal\domain\repository\ProductRepositoryPortQuery.class
