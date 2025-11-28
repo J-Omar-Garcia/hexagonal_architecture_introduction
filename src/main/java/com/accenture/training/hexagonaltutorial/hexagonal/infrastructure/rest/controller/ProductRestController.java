@@ -1,13 +1,11 @@
 package com.accenture.training.hexagonaltutorial.hexagonal.infrastructure.rest.controller;
 
-import com.accenture.training.hexagonaltutorial.hexagonal.application.IProductInteractorCommand;
+import com.accenture.training.hexagonaltutorial.hexagonal.application.adapters.ProductRepositoryPortCommandImpl;
+import com.accenture.training.hexagonaltutorial.hexagonal.application.adapters.ProductRepositoryPortQueryImpl;
 import com.accenture.training.hexagonaltutorial.hexagonal.infrastructure.rest.mapper.ProductDtoMapper;
-import com.accenture.training.hexagonaltutorial.hexagonal.application.IProductInteractorQuery;
 import com.accenture.training.hexagonaltutorial.common.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 
 @RequiredArgsConstructor
@@ -15,12 +13,12 @@ import java.util.UUID;
 @RestController
 public class ProductRestController {
 
-    private final IProductInteractorQuery productInteractor;
-    private final IProductInteractorCommand productInteractorCommand;
+    private final ProductRepositoryPortQueryImpl productInteractor;
+    private final ProductRepositoryPortCommandImpl productInteractorCommand;
 
     @GetMapping("/{productId}")
     public ProductDto findProductByProductId(@PathVariable String productId) {
-        return ProductDtoMapper.fromProductToDto(productInteractor.findProductById(productId));
+        return ProductDtoMapper.fromProductToDto(productInteractor.findProductByProductId(productId));
     }
 
     @PostMapping

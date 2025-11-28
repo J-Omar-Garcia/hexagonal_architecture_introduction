@@ -4,8 +4,8 @@ import com.accenture.training.hexagonaltutorial.common.PriceFormatter;
 import com.accenture.training.hexagonaltutorial.hexagonal.infrastructure.database.h2.entity.ProductHexaEntity;
 import com.accenture.training.hexagonaltutorial.hexagonal.infrastructure.database.h2.mapper.ProductEntityMapper;
 import com.accenture.training.hexagonaltutorial.hexagonal.providers.ProductEntityProvider;
-import com.accenture.training.hexagonaltutorial.hexagonal.application.IProductInteractorQuery;
-import com.accenture.training.hexagonaltutorial.hexagonal.application.IProductInteractorCommand;
+import com.accenture.training.hexagonaltutorial.hexagonal.application.ports.IProductApplicationPortQuery;
+import com.accenture.training.hexagonaltutorial.hexagonal.application.ports.IProductApplicationPortCommand;
 import com.accenture.training.hexagonaltutorial.common.ProductDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,13 +17,13 @@ import static org.mockito.Mockito.*;
 
 public class ProductRestController2Test {
 
-    IProductInteractorQuery productInteractor;
-    IProductInteractorCommand productInteractorCommand;
+    IProductApplicationPortQuery productInteractor;
+    IProductApplicationPortCommand productInteractorCommand;
     ProductRestController productRestController;
 
     @BeforeEach
     void setUp() {
-        productInteractor = mock(IProductInteractorQuery.class);
+        productInteractor = mock(IProductApplicationPortQuery.class);
         productRestController = new ProductRestController(productInteractor,productInteractorCommand);
     }
 

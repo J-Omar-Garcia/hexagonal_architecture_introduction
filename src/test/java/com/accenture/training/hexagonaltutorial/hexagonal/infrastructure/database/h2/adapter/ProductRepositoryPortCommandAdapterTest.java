@@ -28,10 +28,10 @@ class ProductRepositoryPortCommandAdapterTest {
     @ArgumentsSource(ProductEntityProvider.class)
     void findProductByProductId(ProductHexaEntity productHexaEntity) {
         //GIVEN
-        ProductRepositoryAdapterQuery productRepositoryAdapter = new ProductRepositoryAdapterQuery(productJpaRepositoryQuery);
+        ProductApplicationPortQueryImpl productRepositoryAdapter = new ProductApplicationPortQueryImpl(productJpaRepositoryQuery);
         given(productJpaRepositoryQuery.findByProductId(productHexaEntity.getProductId())).willReturn(Optional.of(productHexaEntity));
         //WHEN
-        Product product = productRepositoryAdapter.findProductByProductId(productHexaEntity.getProductId());
+        Product product = productRepositoryAdapter.findProductById(productHexaEntity.getProductId());
         //THEN
         assertEquals(productHexaEntity.getProductId(), product.getProductId());
         assertEquals(productHexaEntity.getName(), product.getName());
